@@ -1,6 +1,11 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename:'[name].[contenthash].js',
+    },
+    resolve:{
+      extensions:['.js', '.vue']
+    },
  module:{
      rules:[
          {
@@ -20,10 +25,5 @@ module.exports = {
              }
          }
      ]
- },
-    plugins:[
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
-    ]
+ }
 }
